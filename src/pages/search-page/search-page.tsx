@@ -1,4 +1,6 @@
 import React from 'react';
+import Filter from '../../components/filter/filter';
+import Product from '../../components/product/product';
 import SearchHeader from '../../components/search-header/search-header';
 import SelectBox from '../../components/select-box/select-box';
 import './search-page.css';
@@ -11,8 +13,16 @@ const SearchPage = () => {
             <SelectBox />
          </div>
          <div className="search-page__body">
-            <div className="search-page__body__filter"></div>
-            <div className="search-page__body__products"></div>
+            <div className="search-page__body__filter">
+               <Filter />
+               <Filter />
+               <Filter />
+            </div>
+            <div className="search-page__body__products">
+               {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((e) => (
+                  <Product />
+               ))}
+            </div>
          </div>
       </div>
    );

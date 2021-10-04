@@ -5,14 +5,22 @@
    display: flex;
    align-items: center;
    justify-content: space-between;
-   padding: 17px 80px 20px 80px;
+   padding: 15px 80px 0 80px;
 }
 
 .search-page__body {
+   display: flex;
+   flex-direction: row;
+   padding: 17px 80px 20px 80px;
 }
 
 .search-page__body__filter {
+   width: 206px;
 }
 
 .search-page__body__products {
+   display: flex;
+   flex-wrap: wrap;
+   width: 100%;
+   margin-left: 15px;
 }
