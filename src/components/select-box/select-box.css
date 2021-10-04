@@ -1,3 +1,20 @@
 .select-box {
-  
+   cursor: pointer;
+
+   width: 120px;
+   height: 48px;
+   border-radius: 4px;
+   border: 1px solid #b0b0b0;
+   appearance: none;
+   background: url('../../assets/icons/arrow-down.svg') 0 0 no-repeat;
+   background-position: calc(100% - 10px);
+   background-size: 10px;
+   padding-left: 18px;
+   font-family: 'Roboto', sans-serif;
+   font-size: 17px;
+   color: #b0b0b0;
+}
+
+.select-box:focus {
+   outline: none;
 }

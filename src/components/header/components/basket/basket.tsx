@@ -6,7 +6,9 @@ const Basket = () => {
       <div>
          <div className="basket">
             <p>Sepetim</p>
-            <div className="basket__count">3</div>
+            <div data-testid="basket-count" className="basket__count">
+               3
+            </div>
          </div>
       </div>
    );

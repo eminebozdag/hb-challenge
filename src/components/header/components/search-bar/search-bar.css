@@ -1,16 +1,33 @@
 .search-box {
-   
+   display: flex;
+   align-items: center;
+   background: #eeeeee;
+   border-radius: 100px;
+   height: 48px;
+   width: 695px;
+   padding: 0 27px;
 }
 
 .search-box__icon {
+   margin-right: 12px;
 }
 
 .search-box__input {
+   border: none;
+   background: #eeeeee;
+   width: 100%;
+   font-family: 'Roboto', sans-serif;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 15px;
+   color: #b0b0b0;
 }
 
 .search-box__input:focus {
-   
+   outline: none;
 }
 
 .search-box__input::placeholder {
+   font-size: 15px;
+   color: #b0b0b0;
 }

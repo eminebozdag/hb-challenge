@@ -2,6 +2,10 @@
 }
 
 .search-page__header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 17px 80px 20px 80px;
 }
 
 .search-page__body {
