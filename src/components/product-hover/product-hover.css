@@ -1,0 +1,33 @@
+.product-hover {
+   cursor: pointer;
+   width: 255px;
+   height: 465px;
+   border: 1px solid #e5e5e5;
+   border-radius: 10px;
+}
+
+.product-hover__image {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.product-hover__image img {
+   width: 224px;
+}
+
+.product-hover__description {
+   width: 230px;
+   height: 32px;
+   font-size: 12px;
+   font-family: 'Roboto', sans-serif;
+   color: #484848;
+   padding: 0 15px;
+}
+
+.product-hover__button {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 35px;
+}

@@ -1,0 +1,16 @@
+.add-cart-button {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 230px;
+   height: 32px;
+   border-radius: 8px;
+   background-color: #ffeee3;
+}
+
+.add-cart-button p {
+   font-size: 12px;
+   font-weight: 500;
+   font-family: 'Roboto', sans-serif;
+   color: #fd6001;
+}

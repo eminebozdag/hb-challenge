@@ -24,3 +24,13 @@
    width: 100%;
    margin-left: 15px;
 }
+
+.search-page__footer {
+   height: 300px;
+}
+
+.search-page__footer__pagination {
+   display: flex;
+   flex-direction: row;
+   margin: 32px auto 300px 300px;
+}
