@@ -1,16 +1,16 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import SearchBar from './search-bar';
+import Logo from './logo';
 
-describe('<SearchBar />', () => {
+describe('<Logo />', () => {
    it('should render successfully', () => {
       // Arrange
-      const component = <SearchBar />;
+      const component = <Logo />;
 
       // Act
       const { getByTestId } = render(component);
 
       // Assert
-      expect(getByTestId('search-input')).not.toBeNull();
+      expect(getByTestId('logo')).not.toBeNull();
    });
 });

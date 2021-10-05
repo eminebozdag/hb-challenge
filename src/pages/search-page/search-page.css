@@ -11,6 +11,7 @@
 .search-page__body {
    display: flex;
    flex-direction: row;
+
    padding: 17px 80px 20px 80px;
 }
 
@@ -32,5 +33,5 @@
 .search-page__footer__pagination {
    display: flex;
    flex-direction: row;
-   margin: 32px auto 300px 300px;
+   margin: 32px 300px 300px 295px;
 }

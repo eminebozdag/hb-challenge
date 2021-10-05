@@ -17,17 +17,15 @@
 }
 
 .product-hover__description {
-   width: 230px;
-   height: 32px;
    font-size: 12px;
    font-family: 'Roboto', sans-serif;
    color: #484848;
-   padding: 0 15px;
+   padding: 1px 14px;
 }
 
 .product-hover__button {
    display: flex;
    justify-content: center;
    align-items: center;
-   margin-top: 35px;
+   margin-top: 25px;
 }

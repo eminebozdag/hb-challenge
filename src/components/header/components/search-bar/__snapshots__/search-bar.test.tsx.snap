@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<SearchBar /> should render successfully 1`] = `"<div class=\\"search-box\\"><div class=\\"search-box__icon\\"><img alt=\\"search\\"></div><input data-testid=\\"search-input\\" placeholder=\\"25 milyon'dan fazla ürün içerisinde ara\\" class=\\"search-box__input\\"></div>"`;

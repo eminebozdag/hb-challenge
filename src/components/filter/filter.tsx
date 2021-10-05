@@ -1,8 +1,9 @@
 import React from 'react';
 import './filter.css';
+
 const Filter = () => {
    return (
-      <div className="search-filter">
+      <div data-testid="filter" className="filter">
          <h5>
             <b>Renk</b>
          </h5>

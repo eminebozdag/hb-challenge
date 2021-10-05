@@ -1,16 +1,16 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import SearchBar from './search-bar';
+import Basket from './basket';
 
-describe('<SearchBar />', () => {
+describe('<Basket />', () => {
    it('should render successfully', () => {
       // Arrange
-      const component = <SearchBar />;
+      const component = <Basket />;
 
       // Act
       const { getByTestId } = render(component);
 
       // Assert
-      expect(getByTestId('search-input')).not.toBeNull();
+      expect(getByTestId('basket-count')).not.toBeNull();
    });
 });

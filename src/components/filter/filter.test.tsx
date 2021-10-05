@@ -1,16 +1,16 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import SearchBar from './search-bar';
+import Filter from './filter';
 
-describe('<SearchBar />', () => {
+describe('<Filter/>', () => {
    it('should render successfully', () => {
       // Arrange
-      const component = <SearchBar />;
+      const component = <Filter />;
 
       // Act
       const { getByTestId } = render(component);
 
       // Assert
-      expect(getByTestId('search-input')).not.toBeNull();
+      expect(getByTestId('filter')).not.toBeNull();
    });
 });

@@ -1,4 +1,6 @@
-.pagination {
+.pagination-button {
+   align-items: center;
+   cursor: pointer;
    width: 33px;
    height: 33px;
    border: 1px solid #eeeeee;
@@ -6,15 +8,16 @@
    margin-right: 7px;
 }
 
-.pagination:first-child {
+.pagination-button:first-child {
    margin-right: 13px;
 }
 
-.pagination:last-child {
-   margin-left: 13px;
+.pagination-button:last-child {
+   margin-left: 6px;
+   margin-right: 0px;
 }
 
-.pagination p {
+.pagination-button p {
    text-align: center;
    font-size: 10px;
    font-weight: 400;

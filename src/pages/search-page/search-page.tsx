@@ -1,6 +1,6 @@
 import React from 'react';
-import Pagination from '../../components/button/pagination-button/pagination-button';
 import Filter from '../../components/filter/filter';
+import PaginationButton from '../../components/pagination-button/pagination-button';
 import Product from '../../components/product/product';
 import SearchHeader from '../../components/search-header/search-header';
 import SelectBox from '../../components/select-box/select-box';
@@ -20,19 +20,16 @@ const SearchPage = () => {
                <Filter />
             </div>
             <div className="search-page__body__products">
-               {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((e) => (
+               {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17].map((e) => (
                   <Product />
                ))}
             </div>
          </div>
          <div className="search-page__footer">
             <div className="search-page__footer__pagination">
-               <Pagination />
-               <Pagination />
-               <Pagination />
-               <Pagination />
-               <Pagination />
-               <Pagination />
+               {[0, 1, 2, 3, 4, 5, 6, 7].map((e) => (
+                  <PaginationButton />
+               ))}
             </div>
          </div>
       </div>

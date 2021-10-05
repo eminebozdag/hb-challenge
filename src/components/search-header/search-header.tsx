@@ -5,9 +5,9 @@ const SearchHeader = () => {
    return (
       <div className="search-header">
          <h4>
-            <b>iPhone iOS cep telefonu</b>
+            <b data-testid="search-header-title">iPhone iOS cep telefonu</b>
          </h4>
-         <p>
+         <p data-testid="search-header-detail">
             Aranan Kelime: <span>iphone 11</span>
          </p>
       </div>

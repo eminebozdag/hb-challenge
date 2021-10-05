@@ -6,11 +6,11 @@ import './product.css';
 const Product = () => {
    const [hover, setHover] = useState(false);
    return (
-      <div className="product" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+      <div data-testid="product" className="product" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
          {hover ? (
             <ProductHover type="AVAILABLE" />
          ) : (
-            <div>
+            <div data-testid="product-without-hover">
                <div className="product__image">
                   <img src={image} alt="product" />
                </div>
