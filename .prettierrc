@@ -2,17 +2,18 @@
   "singleQuote": true,
   "trailingComma": "all",
   "printWidth": 150,
-  "overrides": [{
+  "overrides": [
+    {
       "files": ".prettierrc",
       "options": {
-          "parser": "json"
+        "parser": "json"
       }
-  }],
+    }
+  ],
   "editor.formatOnSave": true,
   "proseWrap": "always",
   "tabWidth": 3,
   "requireConfig": false,
-  "useTabs": false,
   "bracketSpacing": true,
   "jsxBracketSameLine": false,
   "semi": true

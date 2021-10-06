@@ -4,13 +4,19 @@ import SearchBar from './components/search-bar/search-bar';
 import './header.css';
 
 const Header = () => {
+   const handleSearch = (text: string) => {
+      if (text && text.trimStart().trimEnd().length >= 2) {
+         console.log('text', text);
+      }
+   };
+
    return (
       <div className="header">
          <div className="header__logo">
             <Logo />
          </div>
          <div className="header__search-bar">
-            <SearchBar />
+            <SearchBar onSearch={handleSearch} />
          </div>
          <div className="header__basket">
             <Basket />
