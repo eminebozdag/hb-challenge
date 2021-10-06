@@ -29,10 +29,16 @@
 }
 
 .product__description {
+}
+
+.product__description p {
    font-size: 12px;
    font-family: 'Roboto', sans-serif;
    color: #484848;
    padding: 0 15px;
+   line-height: 1.2em;
+   max-height: 2.3em;
+   overflow: hidden;
 }
 
 .product__description__meta {

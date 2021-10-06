@@ -1,5 +1,10 @@
 .basket {
    position: relative;
+}
+
+.basket__button {
+   cursor: pointer;
+   position: relative;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -9,14 +14,22 @@
    border-radius: 4px;
 }
 
-.basket p {
+.basket:hover > .basket__button {
+   border-bottom: 1px solid transparent;
+   border-bottom-left-radius: 0;
+   border-bottom-right-radius: 0;
+   background: white;
+   z-index: 2;
+}
+
+.basket__button p {
    text-align: center;
    font-size: 17px;
    font-family: 'Roboto', sans-serif;
    color: #b0b0b0;
 }
 
-.basket__count {
+.basket__button__count {
    display: flex;
    align-items: center;
    justify-content: center;
@@ -32,4 +45,24 @@
    color: white;
    font-family: 'Roboto', sans-serif;
    font-size: 12px;
+}
+
+.basket__detail {
+   position: absolute;
+   right: 0;
+   top: 48.5px;
+   width: 360px;
+   height: 360px;
+   border: 1px solid #b0b0b0;
+   border-radius: 4px 0px 4px 4px;
+   background: white;
+}
+
+.basket__detail__list {
+   height: 320px;
+   width: 320px;
+   margin: 20px;
+
+   overflow: hidden;
+   overflow-y: scroll;
 }

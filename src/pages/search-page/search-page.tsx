@@ -20,7 +20,7 @@ const SearchPage = () => {
                <Filter />
             </div>
             <div className="search-page__body__products">
-               {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17].map((e) => (
+               {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((e) => (
                   <Product />
                ))}
             </div>
