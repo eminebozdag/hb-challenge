@@ -4,7 +4,7 @@ import './filter.css';
 interface Props {
    title: string;
    values: FilterValue[];
-   selectedKey?: string;
+   selectedKeys?: string[];
    onSelected(key: string): void;
 }
 
@@ -13,7 +13,7 @@ interface FilterValue {
    value: string;
 }
 
-const Filter = ({ title, values, selectedKey, onSelected }: Props) => {
+const Filter = ({ title, values, selectedKeys, onSelected }: Props) => {
    return (
       <div data-testid="filter" className="filter">
          <h5>
@@ -21,7 +21,7 @@ const Filter = ({ title, values, selectedKey, onSelected }: Props) => {
          </h5>
          {values.map((val: FilterValue) => {
             return (
-               <p key={val.key} onClick={() => onSelected(val.key)}>
+               <p key={val.key} className={selectedKeys?.includes(val.key) ? 'selected' : ''} onClick={() => onSelected(val.key)}>
                   {val.value}
                </p>
             );

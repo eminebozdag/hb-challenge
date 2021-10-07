@@ -6,10 +6,16 @@ interface ProductDto {
    discountRate: number;
    availableStock: number;
    meta: {
-      brands: Array<string>;
-      colors: Array<string>;
+      brands: Array<MetaDto>;
+      colors: Array<MetaDto>;
    };
    image: string;
 }
 
+interface MetaDto {
+   key: string;
+   value: string;
+}
+
+export type { MetaDto };
 export default ProductDto;

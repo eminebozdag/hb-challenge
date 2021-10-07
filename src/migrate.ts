@@ -20,6 +20,9 @@ const migrateLocalStorage = (): ProductDto[] => {
       const oldPrice = Math.round(randomNumber(999, 1500) * 100) / 100;
       const discountRate = Math.abs(Math.round(100 - (price * 100) / oldPrice));
 
+      const color = productColors[randomInteger(0, productColors.length - 1)];
+      const brand = productBrands[randomInteger(0, productBrands.length - 1)];
+
       products.push({
          id: i,
          name: productNames[randomInteger(0, productNames.length - 1)],
@@ -28,8 +31,18 @@ const migrateLocalStorage = (): ProductDto[] => {
          discountRate,
          availableStock: 1,
          meta: {
-            brands: [productBrands[randomInteger(0, productBrands.length - 1)]],
-            colors: [productColors[randomInteger(0, productColors.length - 1)]],
+            brands: [
+               {
+                  key: `brand_${brand}`.toLowerCase(),
+                  value: brand,
+               },
+            ],
+            colors: [
+               {
+                  key: `color_${color}`.toLowerCase(),
+                  value: color,
+               },
+            ],
          },
          image: `https://productimages.hepsiburada.net/${productImages[randomInteger(0, productImages.length - 1)]}`,
       } as ProductDto);

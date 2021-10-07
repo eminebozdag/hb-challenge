@@ -1,11 +1,11 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import Modal from './modal';
+import RemoveBasketItemModal from './remove-basket-item-modal';
 
-describe('<Modal />', () => {
+describe('<RemoveBasketItemModal />', () => {
    it('should render successfully', () => {
       // Arrange
-      const component = <Modal />;
+      const component = <RemoveBasketItemModal />;
 
       // Act
       const { getByTestId } = render(component);

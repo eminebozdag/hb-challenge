@@ -26,6 +26,10 @@
    margin-top: 10px;
 }
 
+.filter p.selected {
+   color: #ff6000;
+}
+
 .filter p:hover {
    color: #ff6000;
    transition: 0.5s;

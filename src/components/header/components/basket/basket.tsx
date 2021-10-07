@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductDto from '../../../../dtos/productDto';
-import { removeFromBasket } from '../../../../store/actions/basketActions';
+import { dispatchRemoveFromBasketModal } from '../../../../store/actions/globalActions';
 import './basket.css';
 import BasketItem from './components/basket-item/basket-item';
 
@@ -11,7 +11,7 @@ const Basket = () => {
    const [hover, setHover] = useState(false);
 
    const handleDelete = (id: number) => {
-      dispatch(removeFromBasket(id));
+      dispatch(dispatchRemoveFromBasketModal(true, id));
    };
 
    return (
@@ -27,7 +27,7 @@ const Basket = () => {
             <div data-testid="basket__detail-with-hover" className="basket__detail">
                <div className="basket__detail__list">
                   {items.map((item: ProductDto) => (
-                     <BasketItem item={item} onDelete={handleDelete} />
+                     <BasketItem key={`basketitem-${item.id}`} item={item} onDelete={handleDelete} />
                   ))}
 
                   {items.length === 0 && <p>Sepetiniz boş!</p>}

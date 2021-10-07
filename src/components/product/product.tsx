@@ -27,11 +27,11 @@ const Product = ({ product }: Props) => {
                   <div className="product__description__meta">
                      <p className="product__description__meta__brand">
                         <b>Marka:</b>
-                        <span>{product.meta.brands}</span>
+                        <span>{product.meta.brands.map((e) => e.value)}</span>
                      </p>
                      <p className="product__description__meta__color">
                         <b>Renk:</b>
-                        <span>{product.meta.colors}</span>
+                        <span>{product.meta.colors.map((e) => e.value)}</span>
                      </p>
                   </div>
                   <div className="product__description__price">

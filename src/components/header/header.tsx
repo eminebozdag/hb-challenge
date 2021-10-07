@@ -1,12 +1,26 @@
+import { useEffect, useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 import Basket from './components/basket/basket';
 import Logo from './components/logo/logo';
 import SearchBar from './components/search-bar/search-bar';
 import './header.css';
 
 const Header = () => {
+   const [query, setQuery] = useState<URLSearchParams>();
+   const { search } = useLocation();
+   const history = useHistory();
+
+   useEffect(() => {
+      setQuery(new URLSearchParams(search));
+   }, [search]);
+
    const handleSearch = (text: string) => {
       if (text && text.trimStart().trimEnd().length >= 2) {
-         console.log('text', text);
+         query?.set('q', text);
+         history.push(`/ara?${query?.toString()}`);
+      } else {
+         query?.delete('q');
+         history.push(`/ara?${query?.toString()}`);
       }
    };
 
