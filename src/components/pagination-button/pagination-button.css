@@ -8,6 +8,10 @@
    margin-right: 7px;
 }
 
+.pagination-button.selected {
+   border: 1px solid #ff6000;
+}
+
 .pagination-button:first-child {
    margin-right: 13px;
 }
@@ -15,6 +19,10 @@
 .pagination-button:last-child {
    margin-left: 6px;
    margin-right: 0px;
+}
+
+.pagination-button.selected p {
+   color: #ff6000;
 }
 
 .pagination-button p {

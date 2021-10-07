@@ -13,6 +13,7 @@ const App = () => {
    useEffect(() => {
       const initialProducts = getProductsFromLocalStorage();
       if (initialProducts) {
+         // TODO: Think about filtering
          dispatch(setProducts(initialProducts));
          return;
       }

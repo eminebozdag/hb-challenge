@@ -15,7 +15,7 @@
    align-items: center;
    height: 72px;
    width: 54px;
-   border: 0.1px solid #e5e5e5;
+   border: 1px solid #f5f4f4;
    border-radius: 2px;
    margin-right: 10px;
 }
@@ -32,7 +32,7 @@
 
 .basket-item__description__title {
    height: 32px;
-   width: 170px;
+   width: 230px;
    line-height: 1em;
    max-height: 2em;
    overflow: hidden;
@@ -43,6 +43,7 @@
    font-family: 'Roboto', sans-serif;
    color: #484848;
    margin-top: 0px;
+   text-align: left;
 }
 
 .basket-item__description__remove {
@@ -54,6 +55,7 @@
    border: 1px solid #f90000;
    border-radius: 4px;
    margin-top: 22px;
+   cursor: pointer;
 }
 
 .basket-item__description__remove span {

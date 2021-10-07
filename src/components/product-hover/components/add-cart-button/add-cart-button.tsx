@@ -1,8 +1,13 @@
 import React from 'react';
 import './add-cart-button.css';
-const AddCartButton = () => {
+
+interface Props {
+   onClick(): void;
+}
+
+const AddCartButton = ({ onClick }: Props) => {
    return (
-      <div data-testid="add-cart-button" className="add-cart-button">
+      <div data-testid="add-cart-button" className="add-cart-button" onClick={onClick}>
          <p>Sepete Ekle</p>
       </div>
    );

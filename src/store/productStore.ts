@@ -1,13 +1,14 @@
+import ProductDto from '../dtos/productDto';
 import { ProductActionType } from './actions/productActions';
 
 const initialState = {
-   products: [],
+   items: [] as ProductDto[],
 };
 
 const productStore = (state = initialState, action: any) => {
    switch (action.type) {
       case ProductActionType.SET_PRODUCTS:
-         return { products: action.products };
+         return { items: action.items };
       default:
          return state;
    }

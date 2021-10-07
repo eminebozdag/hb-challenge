@@ -1,17 +1,34 @@
 import React from 'react';
 import './filter.css';
 
-const Filter = () => {
+interface Props {
+   title: string;
+   values: FilterValue[];
+   selectedKey?: string;
+   onSelected(key: string): void;
+}
+
+interface FilterValue {
+   key: string;
+   value: string;
+}
+
+const Filter = ({ title, values, selectedKey, onSelected }: Props) => {
    return (
       <div data-testid="filter" className="filter">
          <h5>
-            <b>Renk</b>
+            <b>{title}</b>
          </h5>
-         <p>Lacivert (5)</p>
-         <p>Siyah (3)</p>
-         <p>Kırmızı (1)</p>
+         {values.map((val: FilterValue) => {
+            return (
+               <p key={val.key} onClick={() => onSelected(val.key)}>
+                  {val.value}
+               </p>
+            );
+         })}
       </div>
    );
 };
 
+export type { FilterValue };
 export default Filter;

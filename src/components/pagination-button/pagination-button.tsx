@@ -1,9 +1,15 @@
 import './pagination-button.css';
 
-const PaginationButton = () => {
+interface Props {
+   text: number | string;
+   selected?: boolean;
+   onClick?(text: string | number): void;
+}
+
+const PaginationButton = ({ text, selected = false, onClick }: Props) => {
    return (
-      <div className="pagination-button">
-         <p data-testid="pagination-button-value">3</p>
+      <div className={'pagination-button' + (selected ? ' selected' : '')} onClick={() => onClick && onClick(text)}>
+         <p data-testid="pagination-button-value">{text}</p>
       </div>
    );
 };

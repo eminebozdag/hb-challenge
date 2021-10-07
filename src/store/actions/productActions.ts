@@ -5,11 +5,11 @@ enum ProductActionType {
    SET_PRODUCTS = 'SET_PRODUCTS',
 }
 
-const setProducts = (products: ProductDto[]) => {
+const setProducts = (items: ProductDto[]) => {
    return async (dispatch: Dispatch<Action>) => {
       dispatch({
          type: ProductActionType.SET_PRODUCTS,
-         products,
+         items,
       });
    };
 };

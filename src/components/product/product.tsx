@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import image from '../../assets/images/image2.svg';
+import { useSelector } from 'react-redux';
 import ProductDto from '../../dtos/productDto';
 import ProductHover from '../product-hover/product-hover';
 import './product.css';
@@ -10,15 +10,17 @@ interface Props {
 
 const Product = ({ product }: Props) => {
    const [hover, setHover] = useState(false);
+   const { items } = useSelector((state: any) => state.basketStore);
+   const isAlreadyAddedToBasket = items.findIndex((item: ProductDto) => item.id === product.id) >= 0;
 
    return (
       <div data-testid="product" className="product" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
          {hover ? (
-            <ProductHover type="AVAILABLE" />
+            <ProductHover product={product} type={isAlreadyAddedToBasket ? 'NOT_AVAILABLE' : 'AVAILABLE'} />
          ) : (
             <div data-testid="product-without-hover">
                <div className="product__image">
-                  <img src={image} alt="product" />
+                  <img src={product.image} alt="product" />
                </div>
                <div className="product__description">
                   <p id="product-name">{product.name}</p>

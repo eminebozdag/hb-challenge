@@ -1,28 +1,36 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import ProductDto from '../../../../dtos/productDto';
+import { removeFromBasket } from '../../../../store/actions/basketActions';
 import './basket.css';
 import BasketItem from './components/basket-item/basket-item';
 
 const Basket = () => {
+   const dispatch = useDispatch();
+   const { items } = useSelector((state: any) => state.basketStore);
    const [hover, setHover] = useState(false);
+
+   const handleDelete = (id: number) => {
+      dispatch(removeFromBasket(id));
+   };
 
    return (
       <div data-testid="basket__detail-without-hover" className="basket" onMouseLeave={() => setHover(false)}>
          <div data-testid="basket" className="basket__button" onMouseEnter={() => setHover(true)}>
             <p>Sepetim</p>
             <div data-testid="basket-button-count" className="basket__button__count">
-               3
+               {items.length}
             </div>
          </div>
 
          {hover && (
             <div data-testid="basket__detail-with-hover" className="basket__detail">
                <div className="basket__detail__list">
-                  <BasketItem />
-                  <BasketItem />
-                  <BasketItem />
-                  <BasketItem />
-                  <BasketItem />
-                  <BasketItem />
+                  {items.map((item: ProductDto) => (
+                     <BasketItem item={item} onDelete={handleDelete} />
+                  ))}
+
+                  {items.length === 0 && <p>Sepetiniz boş!</p>}
                </div>
             </div>
          )}

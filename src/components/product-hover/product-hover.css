@@ -3,6 +3,7 @@
    width: 255px;
    height: 465px;
    border: 1px solid #e5e5e5;
+   margin: -1px;
    border-radius: 10px;
 }
 
@@ -21,6 +22,8 @@
    font-family: 'Roboto', sans-serif;
    color: #484848;
    padding: 1px 14px;
+   margin-top: -1px;
+   margin-left: 1px;
 }
 
 .product-hover__button {
