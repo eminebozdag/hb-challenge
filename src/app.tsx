@@ -1,18 +1,24 @@
 import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import './app.css';
 import Header from './components/header/header';
 import { migrateLocalStorage } from './migrate';
 import SearchPage from './pages/search-page/search-page';
+import { setProducts } from './store/actions/productActions';
 import { getProductsFromLocalStorage } from './utils/localStorage';
 
 const App = () => {
+   const dispatch = useDispatch();
+
    useEffect(() => {
       const initialProducts = getProductsFromLocalStorage();
       if (initialProducts) {
+         dispatch(setProducts(initialProducts));
          return;
       }
 
-      migrateLocalStorage();
+      const products = migrateLocalStorage();
+      dispatch(setProducts(products));
    }, []);
 
    return (

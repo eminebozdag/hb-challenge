@@ -1,4 +1,4 @@
-interface Product {
+interface ProductDto {
    id: number;
    name: string;
    price: number;
@@ -9,6 +9,7 @@ interface Product {
       brands: Array<string>;
       colors: Array<string>;
    };
+   image: string;
 }
 
-export default Product;
+export default ProductDto;

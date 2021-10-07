@@ -1,12 +1,12 @@
+import ProductDto from '../dtos/productDto';
 import LocalStorageType from '../enum/localStorageType';
-import Product from '../models/product';
 
-const getProductsFromLocalStorage = (): Product[] => {
+const getProductsFromLocalStorage = (): ProductDto[] => {
    const productsJson = window.localStorage.getItem(LocalStorageType.Products);
    return JSON.parse(productsJson as any);
 };
 
-const setProductsToLocalStorage = (products: Product[]) => {
+const setProductsToLocalStorage = (products: ProductDto[]) => {
    window.localStorage.setItem(LocalStorageType.Products, JSON.stringify(products));
 };
 

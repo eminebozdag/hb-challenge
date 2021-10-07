@@ -15,7 +15,7 @@
    align-items: center;
    height: 72px;
    width: 54px;
-   border: 0.2px solid #e5e5e5;
+   border: 0.1px solid #e5e5e5;
    border-radius: 2px;
    margin-right: 10px;
 }
@@ -46,11 +46,13 @@
 }
 
 .basket-item__description__remove {
+   display: flex;
+   justify-content: center;
+   align-items: center;
    height: 18px;
    width: 50px;
    border: 1px solid #f90000;
-   border-radius: 2px;
-   text-align: center;
+   border-radius: 4px;
    margin-top: 22px;
 }
 

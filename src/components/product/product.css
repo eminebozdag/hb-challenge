@@ -36,9 +36,17 @@
    font-family: 'Roboto', sans-serif;
    color: #484848;
    padding: 0 15px;
-   line-height: 1.2em;
-   max-height: 2.3em;
    overflow: hidden;
+}
+
+.product__description #product-name {
+   word-wrap: break-word;
+   height: 32px;
+   width: 230px;
+   font-size: 12px;
+   font-family: 'Roboto', sans-serif;
+   color: #484848;
+   font-weight: 400;
 }
 
 .product__description__meta {

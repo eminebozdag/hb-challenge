@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import image from '../../assets/images/image2.svg';
+import ProductDto from '../../dtos/productDto';
 import ProductHover from '../product-hover/product-hover';
 import './product.css';
 
-const Product = () => {
+interface Props {
+   product: ProductDto;
+}
+
+const Product = ({ product }: Props) => {
    const [hover, setHover] = useState(false);
+
    return (
       <div data-testid="product" className="product" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
          {hover ? (
@@ -15,25 +21,25 @@ const Product = () => {
                   <img src={image} alt="product" />
                </div>
                <div className="product__description">
-                  <p>Apple iPhone 11 Pro Maxi Phone 11 Pro Max iPhone 11</p>
+                  <p id="product-name">{product.name}</p>
                   <div className="product__description__meta">
                      <p className="product__description__meta__brand">
                         <b>Marka:</b>
-                        <span>Apple</span>
+                        <span>{product.meta.brands}</span>
                      </p>
                      <p className="product__description__meta__color">
                         <b>Renk:</b>
-                        <span>Siyah</span>
+                        <span>{product.meta.colors}</span>
                      </p>
                   </div>
                   <div className="product__description__price">
                      <p className="product__description__price__current">
-                        <b>90,85 TL</b>
+                        <b>{product.price} TL</b>
                      </p>
                      <p className="product__description__price__old">
-                        <span className="product__description__price__old__line-through">124.00 TL</span>
+                        <span className="product__description__price__old__line-through">{product.oldPrice} TL</span>
                         <span className="product__description__price__old__discount">
-                           <b>12%</b>
+                           <b>{product.discountRate}%</b>
                         </span>
                      </p>
                   </div>
