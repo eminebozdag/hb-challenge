@@ -5,7 +5,7 @@ import BasketItem from './basket-item';
 describe('<BasketItem />', () => {
    it('should render successfully', () => {
       // Arrange
-      const component = <BasketItem />;
+      const component = <BasketItem item={{} as any} onDelete={() => {}} />;
 
       // Act
       const { getByTestId } = render(component);

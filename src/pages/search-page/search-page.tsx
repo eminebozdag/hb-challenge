@@ -81,7 +81,7 @@ const SearchPage = () => {
    }, [query]);
 
    return (
-      <div className="search-page">
+      <div data-testid="search-page" className="search-page">
          <div className="search-page__header">
             <SearchHeader />
             <SelectBox

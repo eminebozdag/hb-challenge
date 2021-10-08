@@ -24,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "coverage": "yarn test -u --coverage"
   },
   "eslintConfig": {
     "extends": [
@@ -69,6 +70,15 @@
     "transform": {
       "^.+\\.(ts|tsx)?$": "ts-jest",
       "\\.svg$": "jest-svg-transformer"
-    }
+    },
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/index.tsx",
+      "!src/migrate.ts",
+      "!src/utils/localStorage.ts",
+      "!src/store/index.ts",
+      "!src/hooks/useQuery.ts",
+      "!src/hooks/useSortValues.ts"
+    ]
   }
 }

@@ -5,7 +5,6 @@ import './app.css';
 import RemoveBasketItemModal from './components/header/components/basket/components/remove-basket-item-modal/remove-basket-item-modal';
 import Header from './components/header/header';
 import { migrateLocalStorage } from './migrate';
-import Home from './pages/home/home';
 import SearchPage from './pages/search-page/search-page';
 import { setProducts } from './store/actions/productActions';
 import { getProductsFromLocalStorage } from './utils/localStorage';
@@ -17,7 +16,6 @@ const App = () => {
    useEffect(() => {
       const initialProducts = getProductsFromLocalStorage();
       if (initialProducts && initialProducts.length > 0) {
-         // TODO: Think about filtering
          dispatch(setProducts(initialProducts));
          return;
       }
@@ -27,7 +25,7 @@ const App = () => {
    }, []);
 
    return (
-      <div className="app">
+      <div data-testid="app" className="app">
          <BrowserRouter>
             <Header />
             <Switch>
@@ -35,7 +33,7 @@ const App = () => {
                   <SearchPage />
                </Route>
                <Route path="/">
-                  <Home />
+                  <SearchPage />
                </Route>
             </Switch>
          </BrowserRouter>

@@ -5,7 +5,7 @@ import Filter from './filter';
 describe('<Filter/>', () => {
    it('should render successfully', () => {
       // Arrange
-      const component = <Filter />;
+      const component = <Filter title={''} values={[]} onSelected={() => {}} />;
 
       // Act
       const { getByTestId } = render(component);

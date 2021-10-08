@@ -5,7 +5,7 @@ import AddCartButton from './add-cart-button';
 describe('<AddCartButton/>', () => {
    it('should render successfully', () => {
       // Arrange
-      const component = <AddCartButton />;
+      const component = <AddCartButton onClick={() => {}} />;
 
       // Act
       const { getByTestId } = render(component);

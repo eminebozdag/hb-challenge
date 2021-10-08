@@ -9,8 +9,36 @@ The project was developed using Typescript, React, Redux library and CSS. <br/> 
 ## Clone & Download
 
 ```
-git clone https://github.com/eminebozdag/hb-challenge.git
-cd hb-challenge
-yarn install
-yarn start
+$ git clone https://github.com/eminebozdag/hb-challenge.git
+$ cd hb-challenge
+
+$ yarn install
+$ yarn start
+```
+
+## Testing
+
+To run all tests;
+
+```
+$ yarn test
+```
+
+To see the coverage report;
+
+```
+$ yarn coverage
+```
+
+## Docker
+
+This project has been dockerized. To create docker image, run;
+
+```
+$ docker build . -t hb-challenge
+```
+
+To create a container from docker image;
+```
+$ docker run -it -p 8080:80 hb-challenge
 ```
