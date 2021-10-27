@@ -83,7 +83,7 @@ const SearchPage = () => {
    return (
       <div data-testid="search-page" className="search-page">
          <div className="search-page__header">
-            <SearchHeader />
+            <SearchHeader title={query?.get('q') || ''} />
             <SelectBox
                defaultText="Sıralama"
                items={useSortValues().map((val: SortValue) => {

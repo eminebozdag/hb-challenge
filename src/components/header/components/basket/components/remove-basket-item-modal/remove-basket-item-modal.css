@@ -68,7 +68,7 @@
    color: white;
    text-align: center;
    font-family: 'Roboto', sans-serif;
-   margin: 0px;
+   margin: 1px;
    padding: 5px;
 }
 .remove-basket-item-modal__content__button .accept {

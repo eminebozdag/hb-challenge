@@ -1,14 +1,18 @@
 import React from 'react';
 import './search-header.css';
 
-const SearchHeader = () => {
+interface Props {
+   title: string;
+}
+
+const SearchHeader = ({ title }: Props) => {
    return (
       <div className="search-header">
          <h4>
-            <b data-testid="search-header-title">iPhone iOS cep telefonu</b>
+            <b data-testid="search-header-title"></b>
          </h4>
          <p data-testid="search-header-detail">
-            Aranan Kelime: <span>iphone 11</span>
+            Aranan Kelime: <span>{title}</span>
          </p>
       </div>
    );

@@ -3,7 +3,12 @@ import { setProductsToLocalStorage } from './utils/localStorage';
 import { randomInteger, randomNumber } from './utils/random';
 
 const migrateLocalStorage = (): ProductDto[] => {
-   const productNames = ['Apple iPhone 11 Pro Maxi Phone 11 Pro Max iPhone 11 ', 'Apple iPhone 11', 'iPhone 11 Kırmızı Kılıf', 'Apple Telefon'];
+   const productNames = [
+      'Apple iPhone 11 Pro Maxi Phone 11 Pro Max iPhone 11 Phone 11 Pro Max iPhone 11 Phone 11 Pro Max iPhone 11 ',
+      'Apple iPhone 11',
+      'iPhone 11 Kırmızı Kılıf',
+      'Apple Telefon',
+   ];
    const productBrands = ['Samsung', 'Nokia', 'Apple', 'LG', 'Huawei', 'Xiaomi', 'General Mobile'];
    const productColors = ['Lacivert', 'Sarı', 'Siyah', 'Beyaz'];
    const productImages = [
