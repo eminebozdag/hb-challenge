@@ -27,6 +27,11 @@ const SearchPage = () => {
    const pageProducts = items.slice((page - 1) * pageSize).slice(0, pageSize);
    const totalPages = items.length >= 12 ? Array.from(Array(Math.floor((items.length + pageSize - 1) / pageSize)).keys()) : [0];
 
+   const q = query?.get('q') || '';
+   const color = query?.get('renk')?.split(',') || [];
+   const brand = query?.get('marka')?.split(',') || [];
+   const sort = query?.get('siralama')?.split(',') || [];
+
    useEffect(() => {
       setQuery(new URLSearchParams(search));
    }, [search]);
@@ -73,11 +78,12 @@ const SearchPage = () => {
    }, [items]);
 
    useEffect(() => {
-      dispatch(filterProducts(query?.get('q') || '', query?.get('renk')?.split(',') || [], query?.get('marka')?.split(',') || []));
+      dispatch(filterProducts(q, color, brand));
    }, [query]);
 
    useEffect(() => {
-      dispatch(sortProducts((query?.get('siralama') as SortType) || SortType.Default));
+      const sort = query?.get('siralama');
+      dispatch(sortProducts((sort as SortType) || SortType.Default));
    }, [query]);
 
    return (
@@ -111,10 +117,10 @@ const SearchPage = () => {
                         value: `${colors[key].value} (${colors[key].count})`,
                      } as FilterValue;
                   })}
-                  selectedKeys={query?.get('renk')?.split(',') || []}
+                  selectedKeys={color}
                   onSelected={(key: string) => {
                      let colors: any = {};
-                     const queryColors = query?.get('renk')?.split(',') || [];
+                     const queryColors = color;
                      queryColors.forEach((val: string) => (colors[val] = val));
 
                      const isExist = colors[key];
@@ -130,7 +136,7 @@ const SearchPage = () => {
                <Filter
                   title="Sıralama"
                   values={useSortValues()}
-                  selectedKeys={query?.get('siralama')?.split(',') || []}
+                  selectedKeys={sort}
                   onSelected={(key: string) => {
                      query?.set('siralama', key);
                      history.push(`/ara?${query?.toString()}`);
@@ -144,10 +150,10 @@ const SearchPage = () => {
                         value: `${brands[key].value} (${brands[key].count})`,
                      } as FilterValue;
                   })}
-                  selectedKeys={query?.get('marka')?.split(',') || []}
+                  selectedKeys={brand}
                   onSelected={(key: string) => {
                      let colors: any = {};
-                     const queryBrands = query?.get('marka')?.split(',') || [];
+                     const queryBrands = brand;
                      queryBrands.forEach((val: string) => (colors[val] = val));
 
                      const isExist = colors[key];

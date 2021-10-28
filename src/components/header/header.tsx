@@ -14,6 +14,14 @@ const Header = () => {
       setQuery(new URLSearchParams(search));
    }, [search]);
 
+   const refreshHome = () => {
+      query?.delete('q');
+      query?.delete('renk');
+      query?.delete('marka');
+      query?.delete('siralama');
+      history.push(`/ara?${query?.toString()}`);
+   };
+
    const handleSearch = (text: string) => {
       if (text && text.trimStart().trimEnd().length >= 2) {
          query?.set('q', text);
@@ -27,7 +35,7 @@ const Header = () => {
    return (
       <div className="header">
          <div className="header__logo">
-            <Logo />
+            <Logo onClick={refreshHome} />
          </div>
          <div className="header__search-bar">
             <SearchBar onSearch={handleSearch} />
