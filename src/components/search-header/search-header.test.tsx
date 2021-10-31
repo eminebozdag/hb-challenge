@@ -5,7 +5,7 @@ import SearchHeader from './search-header';
 describe('<SearchHeader/>', () => {
    it('Should be find search title and detail', () => {
       //Arrange
-      const component = <SearchHeader />;
+      const component = <SearchHeader title={''} />;
 
       //Act
       const { getByTestId } = render(component);

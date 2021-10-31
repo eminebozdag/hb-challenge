@@ -15,11 +15,7 @@ const Header = () => {
    }, [search]);
 
    const refreshHome = () => {
-      query?.delete('q');
-      query?.delete('renk');
-      query?.delete('marka');
-      query?.delete('siralama');
-      history.push(`/ara?${query?.toString()}`);
+      history.push(`/`);
    };
 
    const handleSearch = (text: string) => {

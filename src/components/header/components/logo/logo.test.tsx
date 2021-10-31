@@ -5,7 +5,7 @@ import Logo from './logo';
 describe('<Logo />', () => {
    it('should render successfully', () => {
       // Arrange
-      const component = <Logo />;
+      const component = <Logo onClick={Function} />;
 
       // Act
       const { getByTestId } = render(component);
